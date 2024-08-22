@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Cipherator</title>
+</head>
+
+<body>
+
+  <head>
+    <h1>Cipherator</h1>
+  </head>
+  <main>
+    <h2>Encode and decode any file</h2>
+    <form action="/" method="post" enctype="multipart/form-data">
+      <div>
+        <label for="file">File:</label>
+        <input type="file" name="file" id="file">
+      </div>
+      <div>
+        <label for="key">Key:</label>
+        <input type="password" name="key" id="key">
+      </div>
+      <select name="action" id="action">
+        <option value="encode">Encode</option>
+        <option value="decode">Decode</option>
+      </select>
+      <br>
+      <button type="submit">Upload</button>
+    </form>
+  </main>
+</body>
+
+</html>
