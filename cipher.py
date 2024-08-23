@@ -2,13 +2,15 @@ from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.primitives import padding
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import hashes
+import secrets
 import base64
 import os
 
-def get_key():
-    # This function can be customized to accept key from the user or generate one
-    key = input("Enter a 32-byte key for AES (base64 encoded): ")
-    return base64.b64decode(key)
+# Generate a 32-byte key for AES encryption
+def gen_key():
+    key_bytes = secrets.token_bytes(32)
+    key_base64 = base64.b64encode(key_bytes).decode('utf-8')
+    return key_base64
 
 def pad(data):
     padder = padding.PKCS7(algorithms.AES.block_size).padder()
